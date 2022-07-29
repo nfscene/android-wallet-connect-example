@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ConnectFragment">
+
+    <fragment
+        android:id="@+id/ConnectFragment"
+        android:name="com.nfscene.walletconnectdemo.connect.ConnectFragment"
+        android:label="@string/connect_fragment_label"
+        tools:layout="@layout/fragment_connect">
+
+        <action
+            android:id="@+id/action_ConnectFragment_to_ConnectingFragment"
+            app:destination="@id/ConnectingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ConnectingFragment"
+        android:name="com.nfscene.walletconnectdemo.connect.ConnectingFragment"
+        android:label="@string/connecting_fragment_label"
+        tools:layout="@layout/fragment_connecting">
+
+        <action
+            android:id="@+id/action_ConnectingFragment_to_DisconnectFragment"
+            app:destination="@id/DisconnectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DisconnectFragment"
+        android:name="com.nfscene.walletconnectdemo.connect.DisconnectFragment"
+        android:label="@string/disconnect_fragment_label"
+        tools:layout="@layout/fragment_disconnect">
+
+        <action
+            android:id="@+id/action_DisconnectFragment_to_ConnectFragment"
+            app:destination="@id/ConnectFragment" />
+    </fragment>
+</navigation>
